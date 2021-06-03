@@ -1,2 +1,3 @@
 __pycache__/
 db.sqlite3
+/sports_orm_two/.env
