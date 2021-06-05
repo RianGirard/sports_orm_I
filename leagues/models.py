@@ -5,14 +5,17 @@ class League(models.Model):
 	sport = models.CharField(max_length=15)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
+	# teams
 
 	def __repr__(self):
-		return f"<User object: {self.name} {self.sport} ({self.id})>"
+		return f"<League object: {self.name} || Sport: {self.sport} || ID:({self.id})>"
 
 class Team(models.Model):
 	location = models.CharField(max_length=50)
 	team_name = models.CharField(max_length=50)
 	league = models.ForeignKey(League, related_name="teams", on_delete = models.CASCADE)
+	# all_players
+	# curr_players
 
 class Player(models.Model):
 	first_name = models.CharField(max_length=15)
